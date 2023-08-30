@@ -1,0 +1,9 @@
+.logo{
+    text-align: center;
+    padding-bottom: 10px;
+    position: relative;
+}
+.imglogo{
+    height:100px !important;
+    width:10px;
+}
