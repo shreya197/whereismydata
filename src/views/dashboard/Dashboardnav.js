@@ -19,42 +19,7 @@ const DashboardNav = () => {
             All
           </CNavLink>
         </CNavItem>
-        <CNavItem role="presentation">
-          <CNavLink
-            active={activeKey === 2}
-            component="button"
-            role="tab"
-            aria-controls="profile-tab-pane"
-            aria-selected={activeKey === 2}
-            onClick={() => setActiveKey(2)}
-          >
-            Pending
-          </CNavLink>
-        </CNavItem>
-        <CNavItem role="presentation">
-          <CNavLink
-            active={activeKey === 3}
-            component="button"
-            role="tab"
-            aria-controls="contact-tab-pane"
-            aria-selected={activeKey === 3}
-            onClick={() => setActiveKey(3)}
-          >
-            Completed
-          </CNavLink>
-        </CNavItem>
       </CNav>
-      <CTabContent>
-        <CTabPane role="tabpanel" aria-labelledby="home-tab-pane" visible={activeKey === 1}>
-          <div style={{ height: '20px' }}> </div>
-        </CTabPane>
-        <CTabPane role="tabpanel" aria-labelledby="profile-tab-pane" visible={activeKey === 2}>
-          Pending
-        </CTabPane>
-        <CTabPane role="tabpanel" aria-labelledby="contact-tab-pane" visible={activeKey === 3}>
-          Completed
-        </CTabPane>
-      </CTabContent>
     </>
   )
 }

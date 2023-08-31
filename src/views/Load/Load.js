@@ -11,8 +11,10 @@ import Tablebutton from './Tablebutton'
 const Load = () => {
   return (
     <>
-      <DashboardNav />
       <DashboardAllSearch />
+      <div>
+        <br />
+      </div>
       <Tablebutton />
     </>
   )

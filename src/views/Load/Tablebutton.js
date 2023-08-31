@@ -6,7 +6,7 @@ import Charts_run from './chart_run'
 import Charts_tst_run from './chart_tst_run'
 
 const Tablebutton = () => {
-  const [showComponent, setShowComponent] = useState(false)
+  const [showComponent, setShowComponent] = useState(true)
   const [showComponent_offr, setShowComponent_offr] = useState(false)
   const [showComponent_run, setShowComponent_run] = useState(false)
   const [showComponent_tst_run, setShowComponent_tst_run] = useState(false)

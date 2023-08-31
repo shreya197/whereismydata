@@ -12,11 +12,11 @@ import { Link } from 'react-router-dom'
 const Campaign = () => {
   return (
     <>
-      <DashboardNav />
       <DashboardAllSearch />
       <CampaignInfo />
       <DashboardAll />
       <Buttons />
+      <HorizontalFlow />
     </>
   )
 }

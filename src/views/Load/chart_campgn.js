@@ -1,65 +1,88 @@
 import React, { useState } from 'react'
-import { CNav, CNavItem, CNavLink } from '@coreui/react'
+import {
+  CButton,
+  CCard,
+  CCardBody,
+  CCardText,
+  CCardTitle,
+  CCol,
+  CNav,
+  CNavItem,
+  CNavLink,
+  CRow,
+} from '@coreui/react'
 import { CChart } from '@coreui/react-chartjs'
 import { getStyle } from '@coreui/utils'
 const chartss = () => {
   return (
     <>
-      <div style={{ width: '500px', paddingRight: '50px' }}>
-        <CChart
-          xAxisID="hi"
-          type="bar"
-          data={{
-            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-            datasets: [
-              {
-                label: 'Extract',
-                barThickness: 15,
-                backgroundColor: '#1534CC',
-                data: [18087],
-              },
-            ],
-          }}
-          labels="cuts"
-          options={{
-            plugins: {
-              legend: {
-                labels: {
-                  color: getStyle('--cui-body-color'),
+      <CRow xs={{ cols: 1, gutter: 4 }} md={{ cols: 3 }}>
+        <CCol>
+          <div style={{ width: '500px', paddingRight: '50px' }}>
+            <CChart
+              xAxisID="hi"
+              type="bar"
+              data={{
+                labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                datasets: [
+                  {
+                    label: 'Extract',
+                    barThickness: 15,
+                    backgroundColor: '#1534CC',
+                    data: [18087, 500, 17000, 15000, 19000],
+                  },
+                ],
+              }}
+              labels="cuts"
+              options={{
+                plugins: {
+                  legend: {
+                    labels: {
+                      color: getStyle('--cui-body-color'),
+                    },
+                  },
                 },
-              },
-            },
-            scales: {
-              x: {
-                title: {
-                  display: true,
-                  text: 'Cuts',
-                  color: 'black',
+                scales: {
+                  x: {
+                    title: {
+                      display: true,
+                      text: 'Cuts',
+                      color: 'black',
+                    },
+                    grid: {
+                      color: getStyle('--cui-border-color-translucent'),
+                    },
+                    ticks: {
+                      color: getStyle('--cui-body-color'),
+                    },
+                  },
+                  y: {
+                    title: {
+                      display: true,
+                      text: 'Records',
+                      color: 'black',
+                    },
+                    grid: {
+                      color: getStyle('--cui-border-color-translucent'),
+                    },
+                    ticks: {
+                      color: getStyle('--cui-body-color'),
+                    },
+                  },
                 },
-                grid: {
-                  color: getStyle('--cui-border-color-translucent'),
-                },
-                ticks: {
-                  color: getStyle('--cui-body-color'),
-                },
-              },
-              y: {
-                title: {
-                  display: true,
-                  text: 'Records',
-                  color: 'black',
-                },
-                grid: {
-                  color: getStyle('--cui-border-color-translucent'),
-                },
-                ticks: {
-                  color: getStyle('--cui-body-color'),
-                },
-              },
-            },
-          }}
-        />
-      </div>
+              }}
+            />
+          </div>
+        </CCol>
+        <CCol></CCol>
+        <CCol xs>
+          <CCard style={{ width: '12rem' }}>
+            <CCardBody>
+              <CCardText>TBIC_IMP_CAMPGN</CCardText>
+            </CCardBody>
+          </CCard>
+        </CCol>
+      </CRow>
       <div style={{ width: '500px', paddingRight: '50px', height: '400px' }}>
         <CChart
           type="bar"
@@ -70,7 +93,7 @@ const chartss = () => {
                 label: 'Load',
                 barThickness: 15,
                 backgroundColor: '#fdbb0a',
-                data: [18087],
+                data: [18087, 500, 17000, 15000],
               },
             ],
           }}

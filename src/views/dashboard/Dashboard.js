@@ -8,7 +8,6 @@ import Process from './process.js'
 const Dashboard = () => {
   return (
     <>
-      <DashboardNav />
       <Process />
     </>
   )

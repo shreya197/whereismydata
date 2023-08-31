@@ -10,27 +10,43 @@ const initialNodes = [
     type: 'input',
     data: { label: 'VMDP.CAMPGN_DTL HDP VCS OPR' },
     position: { x: 100, y: 120 },
+    style: {
+      background: '#E4EDF8',
+      color: 'black',
+    },
   },
   {
     id: 'horizontal-2',
     sourcePosition: 'right',
     targetPosition: 'left',
-    data: { label: 'VMDP.CAMPGN_DTL HDP VDM OPR' },
+    data: { label: 'OPVBIS.CAMPGN_DTL HDP VDM OPR' },
     position: { x: 390, y: 120 },
+    style: {
+      background: '#E4EDF8',
+      color: 'black',
+    },
   },
   {
     id: 'horizontal-3',
     sourcePosition: 'right',
     targetPosition: 'left',
-    data: { label: 'VMDP.CAMPGN_DTL DB2 VDM OPR' },
+    data: { label: 'OPVBIS.CAMPGN_DTL DB2 VDM OPR' },
     position: { x: 700, y: 120 },
+    style: {
+      background: '#E4EDF8',
+      color: 'black',
+    },
   },
   {
     id: 'horizontal-4',
     sourcePosition: 'right',
     targetPosition: 'left',
-    data: { label: 'VMDP.CAMPGN_DTL HDP VDM OPR2' },
+    data: { label: 'OPVBIS.CAMPGN_DTL HDP VDM OPR2' },
     position: { x: 700, y: 300 },
+    style: {
+      background: 'gray',
+      color: 'white',
+    },
   },
 ]
 

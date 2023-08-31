@@ -16,13 +16,13 @@ const Buttons = () => {
           <CDropdownToggle color="success">Select Date</CDropdownToggle>
           <CDropdownMenu>
             <CDropdownItem key={'30-08-18'} onClick={handleClick}>
-              30 Aug
+              31 Aug
             </CDropdownItem>
             <CDropdownItem href="#" key={'29-08-18'}>
-              29 Aug
+              30 Aug
             </CDropdownItem>
             <CDropdownItem href="#" key={'28-08-18'}>
-              28 Aug
+              29 Aug
             </CDropdownItem>
           </CDropdownMenu>
         </CDropdown>
