@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import {
   CButton,
-  CNav,
-  CNavItem,
-  CNavLink,
+  CFormInput,
+  CInputGroup,
   CTable,
   CTableBody,
   CTableDataCell,
@@ -11,17 +10,26 @@ import {
   CTableHeaderCell,
   CTableRow,
 } from '@coreui/react'
-import greencircle from '../../assets/images/greencircle.png'
-import greentickcircle from '../../assets/images/greentickcircle.png'
-import bluecircle from '../../assets/images/bluecircle.png'
-import blueinp from '../../assets/images/blueinp.jpg'
-import circle from '../../assets/images/circle.jpg'
-import CIcon from '@coreui/icons-react'
-import { cilOptions } from '@coreui/icons'
 import { Link } from 'react-router-dom'
+import processd from '../../assets/data/processdesc.json'
+import CIcon from '@coreui/icons-react'
+import { cilSearch } from '@coreui/icons'
 const Process = () => {
+  const [search, setSearch] = useState('')
+  console.log(search)
   return (
     <>
+      <CInputGroup className="mb-3">
+        <CFormInput
+          placeholder="Filter pipelines"
+          aria-label="Filter pipelines"
+          aria-describedby="button-addon2"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <CButton type="button" color="secondary" variant="outline" id="button-addon2">
+          <CIcon icon={cilSearch} style={{ color: 'black' }} />
+        </CButton>
+      </CInputGroup>
       <CTable align="middle" responsive color="info" striped>
         <CTableHead>
           <CTableRow>
@@ -34,38 +42,23 @@ const Process = () => {
           </CTableRow>
         </CTableHead>
         <CTableBody>
-          <CTableRow>
-            <CTableDataCell>
-              <Link to={'/campaign'}>
-                <p className="text-primary">Campaign</p>
-              </Link>
-            </CTableDataCell>
-            <CTableDataCell>Lorem impsum jnmkdsmokmjkn</CTableDataCell>
-          </CTableRow>
-          <CTableRow>
-            <CTableDataCell>
-              <Link to={'/campaign'}>
-                <p className="text-primary">Campaign</p>
-              </Link>
-            </CTableDataCell>
-            <CTableDataCell>Lorem impsum jnmkdsmokmjkn</CTableDataCell>
-          </CTableRow>
-          <CTableRow>
-            <CTableDataCell>
-              <Link to={'/campaign'}>
-                <p className="text-primary">Campaign</p>
-              </Link>
-            </CTableDataCell>
-            <CTableDataCell>Lorem impsum jnmkdsmokmjkn</CTableDataCell>
-          </CTableRow>
-          <CTableRow>
-            <CTableDataCell>
-              <Link to={'/campaign'}>
-                <p className="text-primary">Campaign</p>
-              </Link>
-            </CTableDataCell>
-            <CTableDataCell>Lorem impsum jnmkdsmokmjkn</CTableDataCell>
-          </CTableRow>
+          {processd
+            .filter((process) => {
+              return search.toLowerCase() === ''
+                ? process
+                : process.processName.toLowerCase().includes(search)
+            })
+            .map((process) => (
+              <CTableRow key={process.id}>
+                {console.log(process)}
+                <CTableDataCell>
+                  <Link to={'/campaign'}>
+                    <p className="text-primary">{process.processName}</p>
+                  </Link>
+                </CTableDataCell>
+                <CTableDataCell>{process.processDesc}</CTableDataCell>
+              </CTableRow>
+            ))}
         </CTableBody>
       </CTable>
     </>

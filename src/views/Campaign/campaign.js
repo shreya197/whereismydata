@@ -15,18 +15,8 @@ const Campaign = () => {
       <DashboardNav />
       <DashboardAllSearch />
       <CampaignInfo />
+      <DashboardAll />
       <Buttons />
-      <HorizontalFlow />
-      <figure className="text-center">
-        <blockquote className="blockquote">
-          For Graphical Representation,{' '}
-          <Link to={'/campaign/load'}>
-            <p className="text-primary" style={{ display: 'inline' }}>
-              click here
-            </p>
-          </Link>
-        </blockquote>
-      </figure>
     </>
   )
 }

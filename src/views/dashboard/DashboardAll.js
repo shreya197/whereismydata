@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import {
   CButton,
+  CFormInput,
+  CInputGroup,
   CNav,
   CNavItem,
   CNavLink,
@@ -14,11 +16,12 @@ import {
 import greencircle from '../../assets/images/greencircle.png'
 import greentickcircle from '../../assets/images/greentickcircle.png'
 import bluecircle from '../../assets/images/bluecircle.png'
-import blueinp from '../../assets/images/blueinp.jpg'
+import redcircle from '../../assets/images/redcircle.png'
+import blueinp from '../../assets/images/blueout.png'
 import circle from '../../assets/images/circle.jpg'
 import DashboardNav from './Dashboardnav.js'
 import CIcon from '@coreui/icons-react'
-import { cilOptions } from '@coreui/icons'
+import { cilOptions, cilSearch } from '@coreui/icons'
 import { Link } from 'react-router-dom'
 const DashboardAll = () => {
   return (
@@ -44,21 +47,18 @@ const DashboardAll = () => {
         <CTableBody>
           <CTableRow>
             <CTableDataCell>
-              <CButton color="success" variant="outline" disabled="true">
+              <CButton color="info" variant="outline" disabled="true">
                 <img
-                  src={greencircle}
+                  src={bluecircle}
                   alt=""
-                  style={{ height: '15px', width: '15px', paddingRight: '5px' }}
+                  style={{ height: '20px', width: '20px', paddingRight: '5px' }}
                 ></img>
-                Completed
+                In Progress
               </CButton>
             </CTableDataCell>
             <CTableDataCell>Campaign</CTableDataCell>
             <CTableDataCell>
-              {' '}
-              <Link to={'/campaign/load'}>
-                <p className="text-primary">Extract</p>
-              </Link>
+              <p>Extract</p>
             </CTableDataCell>
             <CTableDataCell>
               <img
@@ -67,24 +67,14 @@ const DashboardAll = () => {
                 style={{ height: '25px', width: '25px', paddingRight: '5px' }}
               ></img>
               <img
-                src={greentickcircle}
+                src={blueinp}
                 alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
+                style={{ height: '26px', width: '26px', paddingRight: '5px' }}
               ></img>
               <img
-                src={greentickcircle}
+                src={circle}
                 alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
-              ></img>
-              <img
-                src={greentickcircle}
-                alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
-              ></img>
-              <img
-                src={greentickcircle}
-                alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
+                style={{ height: '30px', width: '30px', paddingRight: '5px' }}
               ></img>
             </CTableDataCell>
             <CTableDataCell>
@@ -104,16 +94,9 @@ const DashboardAll = () => {
             </CTableDataCell>
             <CTableDataCell>Campaign</CTableDataCell>
             <CTableDataCell>
-              <Link to={'/campaign/load'}>
-                <p className="text-primary">Load</p>
-              </Link>
+              <p>Load</p>
             </CTableDataCell>
             <CTableDataCell>
-              <img
-                src={greentickcircle}
-                alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
-              ></img>
               <img
                 src={greentickcircle}
                 alt=""
@@ -141,95 +124,34 @@ const DashboardAll = () => {
           </CTableRow>
           <CTableRow>
             <CTableDataCell>
-              <CButton color="info" variant="outline" disabled="true">
+              <CButton color="danger" variant="outline" disabled="true">
                 <img
-                  src={bluecircle}
+                  src={redcircle}
                   alt=""
-                  style={{ height: '20px', width: '20px', paddingRight: '5px' }}
-                ></img>
-                In Progress
-              </CButton>
-            </CTableDataCell>
-            <CTableDataCell>Campaign</CTableDataCell>
-            <CTableDataCell>
-              {' '}
-              <Link to={'/campaign/load'}>
-                <p className="text-primary">Load</p>
-              </Link>
-            </CTableDataCell>
-            <CTableDataCell>
-              <img
-                src={greentickcircle}
-                alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
-              ></img>
-              <img
-                src={blueinp}
-                alt=""
-                style={{ height: '26px', width: '26px', paddingRight: '5px' }}
-              ></img>
-              <img
-                src={circle}
-                alt=""
-                style={{ height: '30px', width: '30px', paddingRight: '5px' }}
-              ></img>
-              <img
-                src={circle}
-                alt=""
-                style={{ height: '30px', width: '30px', paddingRight: '5px' }}
-              ></img>
-              <img
-                src={circle}
-                alt=""
-                style={{ height: '30px', width: '30px', paddingRight: '5px' }}
-              ></img>
-            </CTableDataCell>
-            <CTableDataCell>
-              <CIcon icon={cilOptions}></CIcon>
-            </CTableDataCell>
-          </CTableRow>
-          <CTableRow>
-            <CTableDataCell>
-              <CButton color="success" variant="outline" disabled="true">
-                <img
-                  src={greencircle}
                   style={{ height: '15px', width: '15px', paddingRight: '5px' }}
                 ></img>
-                Completed
+                Pending
               </CButton>
             </CTableDataCell>
             <CTableDataCell>Campaign</CTableDataCell>
             <CTableDataCell>
-              {' '}
-              <Link to={'/campaign/load'}>
-                <p className="text-primary">Copy</p>
-              </Link>
+              <p>Copy</p>
             </CTableDataCell>
             <CTableDataCell>
               <img
-                src={greentickcircle}
+                src={circle}
                 alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
+                style={{ height: '30px', width: '30px', paddingRight: '5px' }}
               ></img>
               <img
-                src={greentickcircle}
+                src={circle}
                 alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
+                style={{ height: '30px', width: '30px', paddingRight: '5px' }}
               ></img>
               <img
-                src={greentickcircle}
+                src={circle}
                 alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
-              ></img>
-              <img
-                src={greentickcircle}
-                alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
-              ></img>
-              <img
-                src={greentickcircle}
-                alt=""
-                style={{ height: '25px', width: '25px', paddingRight: '5px' }}
+                style={{ height: '30px', width: '30px', paddingRight: '5px' }}
               ></img>
             </CTableDataCell>
             <CTableDataCell>

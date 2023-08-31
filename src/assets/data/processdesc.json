@@ -1,0 +1,27 @@
+[
+    {
+        "processId": "1",
+        "processName": "VDM Campaign",
+        "processDesc": "Process to show real time information of Reporting Data coming from VCS to VDM"
+    },
+    {
+        "processId": "2",
+        "processName": "Premium Data File",
+        "processDesc": "Process to show the real time information of Premium File extract Process"
+    },
+    {
+        "processId": "3",
+        "processName": "Business Notification",
+        "processDesc": "Process is looking at the VDM data while we are loading it, applying issuer business rules and generating email notifications through VCS"
+    },
+    {
+        "processId": "4",
+        "processName": "Cardholder Consolidation",
+        "processDesc": "Single source of all the cardholder data of VDM sbscribed bank."
+    },
+    {
+        "processId": "5",
+        "processName": "Aggregates",
+        "processDesc": "We have acquirer,issuer,merchant and cardholder level Daily, Monthly and quaterly aggregates"
+    }
+]

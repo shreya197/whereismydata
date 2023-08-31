@@ -9,9 +9,7 @@ const Dashboard = () => {
   return (
     <>
       <DashboardNav />
-      <DashboardAllSearch />
       <Process />
-      <Tabless />
     </>
   )
 }

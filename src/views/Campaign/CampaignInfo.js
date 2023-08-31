@@ -5,16 +5,9 @@ const CampaignInfo = () => {
   return (
     <>
       <CAlert color="success">
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industry standard dummy text ever since the 1500s, when an unknown printer took a
-        </p>
-        <p>
-          Source Table: ABC <br /> Source Table Location: Loc1
-        </p>
-        <p>
-          Destinantion Table: XYZ <br /> Destination Table Location: Loc2
-        </p>
+        This Dashboard is design to make real time monitoring of batch campaign Reporting Data. We
+        can check the status of every campaigns . This dashboard tells us the records extracted by
+        VDM process in every one hour and loaded into VDM reporting table
       </CAlert>
     </>
   )

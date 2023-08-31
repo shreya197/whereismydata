@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import ReactFlow, { useNodesState, useEdgesState, addEdge } from 'reactflow'
 import 'reactflow/dist/style.css'
 
@@ -7,57 +8,29 @@ const initialNodes = [
     id: 'horizontal-1',
     sourcePosition: 'right',
     type: 'input',
-    data: { label: 'Input' },
-    position: { x: 0, y: 80 },
+    data: { label: 'VMDP.CAMPGN_DTL HDP VCS OPR' },
+    position: { x: 100, y: 120 },
   },
   {
     id: 'horizontal-2',
     sourcePosition: 'right',
     targetPosition: 'left',
-    data: { label: 'A Node' },
-    position: { x: 250, y: 0 },
+    data: { label: 'VMDP.CAMPGN_DTL HDP VDM OPR' },
+    position: { x: 390, y: 120 },
   },
   {
     id: 'horizontal-3',
     sourcePosition: 'right',
     targetPosition: 'left',
-    data: { label: 'Node 3' },
-    position: { x: 250, y: 160 },
+    data: { label: 'VMDP.CAMPGN_DTL DB2 VDM OPR' },
+    position: { x: 700, y: 120 },
   },
   {
     id: 'horizontal-4',
     sourcePosition: 'right',
     targetPosition: 'left',
-    data: { label: 'Node 4' },
-    position: { x: 500, y: 0 },
-  },
-  {
-    id: 'horizontal-5',
-    sourcePosition: 'top',
-    targetPosition: 'bottom',
-    data: { label: 'Node 5' },
-    position: { x: 500, y: 100 },
-  },
-  {
-    id: 'horizontal-6',
-    sourcePosition: 'bottom',
-    targetPosition: 'top',
-    data: { label: 'Node 6' },
-    position: { x: 500, y: 230 },
-  },
-  {
-    id: 'horizontal-7',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    data: { label: 'Node 7' },
-    position: { x: 750, y: 50 },
-  },
-  {
-    id: 'horizontal-8',
-    sourcePosition: 'right',
-    targetPosition: 'left',
-    data: { label: 'Node 8' },
-    position: { x: 750, y: 300 },
+    data: { label: 'VMDP.CAMPGN_DTL HDP VDM OPR2' },
+    position: { x: 700, y: 300 },
   },
 ]
 
@@ -71,7 +44,7 @@ const initialEdges = [
   },
   {
     id: 'horizontal-e1-3',
-    source: 'horizontal-1',
+    source: 'horizontal-2',
     type: 'smoothstep',
     target: 'horizontal-3',
     animated: true,
@@ -83,34 +56,6 @@ const initialEdges = [
     target: 'horizontal-4',
     animated: true,
   },
-  {
-    id: 'horizontal-e3-5',
-    source: 'horizontal-3',
-    type: 'smoothstep',
-    target: 'horizontal-5',
-    animated: true,
-  },
-  {
-    id: 'horizontal-e3-6',
-    source: 'horizontal-3',
-    type: 'smoothstep',
-    target: 'horizontal-6',
-    animated: true,
-  },
-  {
-    id: 'horizontal-e5-7',
-    source: 'horizontal-5',
-    type: 'smoothstep',
-    target: 'horizontal-7',
-    animated: true,
-  },
-  {
-    id: 'horizontal-e6-8',
-    source: 'horizontal-6',
-    type: 'smoothstep',
-    target: 'horizontal-8',
-    animated: true,
-  },
 ]
 
 const HorizontalFlow = () => {
@@ -119,15 +64,27 @@ const HorizontalFlow = () => {
   const onConnect = useCallback((params) => setEdges((els) => addEdge(params, els)), [])
 
   return (
-    <div style={{ width: '100vw', height: '60vh' }}>
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-      ></ReactFlow>
-    </div>
+    <>
+      <div style={{ width: '100vw', height: '60vh' }}>
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          onConnect={onConnect}
+        ></ReactFlow>
+      </div>
+      <figure className="text-center">
+        <blockquote className="blockquote">
+          For Graphical Representation,{' '}
+          <Link to={'/campaign/load'}>
+            <p className="text-primary" style={{ display: 'inline' }}>
+              click here
+            </p>
+          </Link>
+        </blockquote>
+      </figure>
+    </>
   )
 }
 
